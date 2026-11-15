@@ -80,8 +80,7 @@
       image: rotorocloud/rocket-counter
       ports:
         - "8085:5000"
-      depends_on:
-        - redis
+
 ```
 
 ### Запустим стек
@@ -129,8 +128,6 @@ services:
     image: rotorocloud/rocket-counter
     ports:
       - "0:5000"
-    depends_on:
-      - redis
 
 ```
 

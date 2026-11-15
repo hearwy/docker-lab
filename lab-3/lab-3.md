@@ -6,7 +6,7 @@
 
  ```bash
 
-  docker run -d --name redis redisdocker run -d --name redis redis
+  docker run -d --name redis redis
   docker ps
 
 ```
@@ -70,19 +70,18 @@
 
 ### Создание файла `docker-compose.yml` с требованиями:
 
- ```bash
+```yaml
 
   services:
-  redis:
-    image: redis
-
-  rocketcounter:
-    image: rotorocloud/rocket-counter
-    ports:
-      - "8085:5000"
-    depends_on:
-      - redis
-
+    redis:
+      image: redis
+  
+    rocketcounter:
+      image: rotorocloud/rocket-counter
+      ports:
+        - "8085:5000"
+      depends_on:
+        - redis
 ```
 
 ### Запустим стек
@@ -120,9 +119,9 @@
 
 ### Заменяем публикацию портов на динамическую, изменив ports: - "8085:5000" на ports: - "0:5000"
 
- ```bash
+```yaml
 
-  services:
+services:
   redis:
     image: redis
 

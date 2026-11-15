@@ -6,5 +6,3 @@ services:
     image: rotorocloud/rocket-counter
     ports:
       - "0:5000"
-    depends_on:
-      - redis
